@@ -154,5 +154,10 @@ public class Problema_05_EjecutorTeatro {
     }
 }
 /*
+run:
+Entrada_Normal{}Entrada{idEntrada=1, numeroEntrada=1, zona=Zona{nombreZona=lateral, cantidadesLocalidades=100, precioNormal=15.0, precioAbonado=10.0}, nombreComprado=Jhonatan, costiFinalEntrada=15.0}
+Entrada_Reducida{porcentajeRebaja=15.0}Entrada{idEntrada=2, numeroEntrada=2, zona=Zona{nombreZona=palco, cantidadesLocalidades=40, precioNormal=70.0, precioAbonado=40.0}, nombreComprado=Andre, costiFinalEntrada=119.0}
+Entrada_Abonada{}Entrada{idEntrada=3, numeroEntrada=2, zona=Zona{nombreZona=central, cantidadesLocalidades=400, precioNormal=20.0, precioAbonado=14.0}, nombreComprado=Raul y Enrique, costiFinalEntrada=28.0}
+BUILD SUCCESSFUL (total time: 0 seconds)
 
 */
