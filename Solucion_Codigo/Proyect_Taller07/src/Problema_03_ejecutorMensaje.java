@@ -15,8 +15,8 @@ visualizarMensaje deben estar definidos.
  */
 class contacto {
 
-    public String numero;
-    public String nombre;
+    protected String numero;
+    protected String nombre;
 
     public contacto(String numero, String nombre) {
         this.numero = numero;
@@ -31,8 +31,8 @@ class contacto {
 
 class Mensaje {
 
-    public contacto destinatario;
-    public contacto remitente;
+    protected contacto destinatario;
+    protected contacto remitente;
 
     public Mensaje(contacto destinatario, contacto remitente) {
         this.destinatario = destinatario;
@@ -55,7 +55,7 @@ class Mensaje {
 
 class SMS extends Mensaje {
 
-    public String mensajeTexto;
+    private String mensajeTexto;
 
     public SMS(String mensajeTexto, contacto destinatario, contacto remitente) {
         super(destinatario, remitente);
@@ -80,7 +80,7 @@ class SMS extends Mensaje {
 
 class MMS extends Mensaje {
 
-    public String nombreImagen;
+    private String nombreImagen;
 
     public MMS(String nombreImagen, contacto destinatario, contacto remitente) {
         super(destinatario, remitente);
@@ -106,24 +106,18 @@ class MMS extends Mensaje {
 public class Problema_03_ejecutorMensaje {
 
     public static void main(String[] args) {
-        contacto con1 = new contacto("123456789", "juan");
-        contacto con2 = new contacto("789456123", "daniel");
+        contacto con1 = new contacto("123456789", "Juan");
+        contacto con2 = new contacto("789456123", "Daniel");
+
         SMS sms = new SMS("hola amigo", con1, con2);
-        System.out.println(sms.enviarMensaje());
-        System.out.println(sms.mostrarMensaje());
-        System.out.println("");
         MMS mms = new MMS("vacaciones.jpg", con2, con1);
-        System.out.println(mms.enviarMensaje());
-        System.out.println(mms.mostrarMensaje());
+
+        System.out.println(sms);
+        System.out.println(mms);
     }
 }
 /*
 run:
-enviando SMS A juan
-texto:hola amigo
-
-enviando MMS A daniel
-texto:vacaciones.jpg
-BUILD SUCCESSFUL (total time: 0 seconds)
-
-*/
+SMS{mensajeTexto=hola amigo}Mensaje{destinatario=contacto{numero=123456789, nombre=Juan}, remitente=contacto{numero=789456123, nombre=Daniel}}
+MMS{nombreImagen=vacaciones.jpg}Mensaje{destinatario=contacto{numero=789456123, nombre=Daniel}, remitente=contacto{numero=123456789, nombre=Juan}}
+ */
